@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TR-103 Prompt Engineering Training</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fefae0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff9f6;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background: linear-gradient(to right, #5f0f40, #9a031e);
-      color: white;
+      background-color: #ffe3e1;
       padding: 2rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #d72638;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #555;
     }
     nav {
-      background: #e36414;
+      background-color: #d72638;
       padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
     }
     nav a {
-      text-decoration: none;
       color: white;
+      text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      text-transform: uppercase;
     }
     nav a:hover {
-      color: #fefae0;
+      text-decoration: underline;
     }
     .hero {
-      background: url('https://source.unsplash.com/1600x600/?technology,code') no-repeat center center/cover;
+      background: url('https://source.unsplash.com/1600x500/?technology,ai') no-repeat center center/cover;
       height: 400px;
       display: flex;
       align-items: center;
@@ -42,59 +54,81 @@
       color: white;
       font-size: 2.5rem;
       font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     }
-    .container {
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .intro-section {
+      background-color: #fff0ed;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       gap: 2rem;
     }
-    .card {
-      background: white;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
+    .intro-image {
+      flex: 1;
+      max-width: 300px;
     }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card img {
+    .intro-image img {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      border-radius: 1rem;
     }
-    .card-content {
-      padding: 1rem;
+    .intro-text {
+      flex: 2;
+      max-width: 600px;
     }
-    footer {
-      background: #5f0f40;
+    .intro-text h2 {
+      font-size: 2rem;
+      color: #d72638;
+      margin-bottom: 1rem;
+    }
+    .intro-text p {
+      font-size: 1.1rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #d72638;
       color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    .diary-links a {
-      display: block;
-      padding: 0.5rem;
-      margin: 0.3rem 0;
-      background: #9a031e;
-      color: white;
-      text-align: center;
+      padding: 0.75rem 1.5rem;
       border-radius: 0.5rem;
       text-decoration: none;
+      font-weight: bold;
+    }
+    .cta-button:hover {
+      background-color: #a51c2e;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+    .diary-links {
+      padding: 2rem;
+      text-align: center;
+    }
+    .diary-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background-color: #ffd6cd;
+      color: #333;
+      border-radius: 1rem;
+      text-decoration: none;
+      font-weight: 500;
       transition: background 0.3s;
     }
     .diary-links a:hover {
-      background: #7c0218;
+      background-color: #ffc4b8;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>TR-103 Prompt Engineering Training</h1>
-    <p>Guru Nanak Dev Engineering College</p>
+    <p>Organized by Guru Nanak Dev Engineering College</p>
   </header>
 
   <nav>
@@ -104,86 +138,24 @@
   </nav>
 
   <div class="hero">
-    Welcome to TR-103 Training
+    Unlock the Power of Prompts
   </div>
 
-  <div class="container">
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?training" alt="Training" />
-      <div class="card-content">
-        <h3>Explore AI & Prompt Engineering</h3>
-        <p>Join us in this 20-day journey of practical learning and daily submissions.</p>
-      </div>
+  <section class="intro-section">
+    <div class="intro-image">
+      <img src="https://source.unsplash.com/featured/?person,student" alt="Trainer Image">
     </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?learning" alt="Learning" />
-      <div class="card-content">
-        <h3>Interactive Daily Tasks</h3>
-        <p>Hands-on experience with HTML, CSS, JS, and AI tools for Semantic Web.</p>
-      </div>
+    <div class="intro-text">
+      <h2>Welcome to TR-103</h2>
+      <p>
+        TR-103 is a hands-on Prompt Engineering training designed to introduce students to AI-assisted tools, web technologies, and daily learning tasks. This site contains links to your daily assignments and diary submission section. Stay consistent, creative, and confident.
+      </p>
+      <a href="daily-task.html" class="cta-button">Start Tasks</a>
     </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?coding" alt="Coding" />
-      <div class="card-content">
-        <h3>Diary of Development</h3>
-        <p>Track your progress through daily uploads and reflective journaling.</p>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <footer>
-    &copy; 2025 TR-103 | Designed by GNDEC Students
+    &copy; 2025 Guru Nanak Dev Engineering College | TR-103 Prompt Engineering Training
   </footer>
 </body>
 </html>
-
-<!-- daily-task.html -->
-<!-- Create a separate file with similar header and nav structure -->
-<!-- Use cards/list of task titles with brief description -->
-
-<!-- daily-diary.html (Structure) -->
-<!-- Example below -->
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Daily Diary Uploads - TR-103</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Daily Diary Uploads</h1>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="daily-task.html">Daily Tasks</a>
-    <a href="daily-diary.html">Daily Diary</a>
-  </nav>
-
-  <div class="container diary-links">
-    <a href="#">Upload Day 1 Diary</a>
-    <a href="#">Upload Day 2 Diary</a>
-    <a href="#">Upload Day 3 Diary</a>
-    <a href="#">Upload Day 4 Diary</a>
-    <a href="#">Upload Day 5 Diary</a>
-    <a href="#">Upload Day 6 Diary</a>
-    <a href="#">Upload Day 7 Diary</a>
-    <a href="#">Upload Day 8 Diary</a>
-    <a href="#">Upload Day 9 Diary</a>
-    <a href="#">Upload Day 10 Diary</a>
-    <a href="#">Upload Day 11 Diary</a>
-    <a href="#">Upload Day 12 Diary</a>
-    <a href="#">Upload Day 13 Diary</a>
-    <a href="#">Upload Day 14 Diary</a>
-    <a href="#">Upload Day 15 Diary</a>
-    <a href="#">Upload Day 16 Diary</a>
-    <a href="#">Upload Day 17 Diary</a>
-    <a href="#">Upload Day 18 Diary</a>
-    <a href="#">Upload Day 19 Diary</a>
-    <a href="#">Upload Day 20 Diary</a>
-  </div>
-</body>
-</html> 
--->

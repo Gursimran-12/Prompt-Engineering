@@ -6,6 +6,16 @@
   <title>TR-103 Prompt Engineering Training</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --pastel-pink: #fcd5ce;
+      --pastel-peach: #fae1dd;
+      --pastel-lilac: #d8e2dc;
+      --pastel-yellow: #f8edeb;
+      --pastel-blue: #cddafd;
+      --text-dark: #2e2e2e;
+      --accent: #b5838d;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,13 +23,13 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #fff6f0;
-      color: #333;
+      background: var(--pastel-yellow);
+      color: var(--text-dark);
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(120deg, #f8b195, #f67280);
-      color: white;
+      background: linear-gradient(120deg, var(--pastel-pink), var(--pastel-peach));
+      color: var(--text-dark);
       padding: 3rem 2rem;
       text-align: center;
       border-bottom-left-radius: 50px;
@@ -32,7 +42,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background-color: #c06c84;
+      background-color: var(--accent);
       padding: 1rem;
       margin-bottom: 2rem;
       position: sticky;
@@ -57,7 +67,7 @@
       color: white;
       font-size: 2.5rem;
       font-weight: bold;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
       border-radius: 30px;
       margin: 1rem;
     }
@@ -66,7 +76,7 @@
       text-align: center;
     }
     .section h2 {
-      color: #d72638;
+      color: var(--accent);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
@@ -82,13 +92,13 @@
       object-fit: cover;
       border-radius: 1rem;
       transition: transform 0.3s ease-in-out;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .gallery img:hover {
       transform: scale(1.05);
     }
     .cta-section {
-      background: #fceae8;
+      background: var(--pastel-lilac);
       padding: 3rem 2rem;
       text-align: center;
       border-radius: 40px;
@@ -99,7 +109,7 @@
       margin-bottom: 1rem;
     }
     .cta-button {
-      background: #f67280;
+      background: var(--accent);
       color: white;
       padding: 0.8rem 1.6rem;
       border-radius: 2rem;
@@ -108,10 +118,10 @@
       transition: background 0.3s;
     }
     .cta-button:hover {
-      background: #c94c63;
+      background: #95566d;
     }
     footer {
-      background: #355c7d;
+      background: var(--accent);
       color: white;
       text-align: center;
       padding: 2rem 1rem;

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TR-103 Prompt Engineering Training</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -11,117 +12,120 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fff9f6;
+      font-family: 'Poppins', sans-serif;
+      background: #fff6f0;
       color: #333;
       line-height: 1.6;
     }
     header {
-      background-color: #ffe3e1;
-      padding: 2rem;
+      background: linear-gradient(120deg, #f8b195, #f67280);
+      color: white;
+      padding: 3rem 2rem;
       text-align: center;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
     }
     header h1 {
-      font-size: 2.5rem;
-      color: #d72638;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #555;
+      font-size: 3rem;
     }
     nav {
-      background-color: #d72638;
-      padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
+      background-color: #c06c84;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
     }
     nav a:hover {
       text-decoration: underline;
     }
     .hero {
-      background: url('https://source.unsplash.com/1600x500/?technology,ai') no-repeat center center/cover;
-      height: 400px;
+      background: url('https://source.unsplash.com/1600x700/?coding,student,ai') no-repeat center center/cover;
+      height: 450px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-size: 2.5rem;
       font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
+      margin: 1rem;
     }
-    .intro-section {
-      background-color: #fff0ed;
-      padding: 4rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
     }
-    .intro-image {
-      flex: 1;
-      max-width: 300px;
-    }
-    .intro-image img {
-      width: 100%;
-      border-radius: 1rem;
-    }
-    .intro-text {
-      flex: 2;
-      max-width: 600px;
-    }
-    .intro-text h2 {
-      font-size: 2rem;
+    .section h2 {
       color: #d72638;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
-    .intro-text p {
-      font-size: 1.1rem;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 1rem;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .cta-section {
+      background: #fceae8;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 40px;
+      margin: 2rem;
+    }
+    .cta-section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
     .cta-button {
-      display: inline-block;
-      margin-top: 1rem;
-      background-color: #d72638;
+      background: #f67280;
       color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 2rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: background 0.3s;
     }
     .cta-button:hover {
-      background-color: #a51c2e;
+      background: #c94c63;
     }
     footer {
-      background-color: #222;
+      background: #355c7d;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
-      margin-top: 4rem;
+      margin-top: 3rem;
     }
-    .diary-links {
-      padding: 2rem;
-      text-align: center;
+    .animated-star {
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+      animation: twinkle 2s infinite alternate;
     }
-    .diary-links a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.75rem 1.25rem;
-      background-color: #ffd6cd;
-      color: #333;
-      border-radius: 1rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-    .diary-links a:hover {
-      background-color: #ffc4b8;
+    @keyframes twinkle {
+      from { opacity: 0.3; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.2); }
     }
   </style>
 </head>
@@ -137,25 +141,35 @@
     <a href="daily-diary.html">Daily Diary</a>
   </nav>
 
-  <div class="hero">
-    Unlock the Power of Prompts
-  </div>
+  <section class="hero">
+    Elevate Your Prompts. Elevate Your Mind.
+  </section>
 
-  <section class="intro-section">
-    <div class="intro-image">
-      <img src="https://source.unsplash.com/featured/?person,student" alt="Trainer Image">
+  <section class="section">
+    <h2>Meet the Prompt Engineers of Tomorrow</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/featured/?student,ai" alt="Students at work">
+      <img src="https://source.unsplash.com/featured/?classroom,learning" alt="Learning session">
+      <img src="https://source.unsplash.com/featured/?technology,teaching" alt="Tech teaching">
+      <img src="https://source.unsplash.com/featured/?young,developers" alt="Young developers">
     </div>
-    <div class="intro-text">
-      <h2>Welcome to TR-103</h2>
-      <p>
-        TR-103 is a hands-on Prompt Engineering training designed to introduce students to AI-assisted tools, web technologies, and daily learning tasks. This site contains links to your daily assignments and diary submission section. Stay consistent, creative, and confident.
-      </p>
-      <a href="daily-task.html" class="cta-button">Start Tasks</a>
-    </div>
+  </section>
+
+  <section class="cta-section">
+    <h3>Want to Dive Into Daily Practice?</h3>
+    <p>Check out the Daily Task page and upload your learning journey in the Daily Diary.</p>
+    <br>
+    <a href="daily-task.html" class="cta-button">Go to Tasks</a>
+    <a href="daily-diary.html" class="cta-button" style="margin-left: 1rem;">Upload Diary</a>
   </section>
 
   <footer>
     &copy; 2025 Guru Nanak Dev Engineering College | TR-103 Prompt Engineering Training
+    <div style="margin-top: 1rem;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Star_icon-72a7cf.svg/64px-Star_icon-72a7cf.svg.png" class="animated-star" alt="star" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Star_icon-72a7cf.svg/64px-Star_icon-72a7cf.svg.png" class="animated-star" alt="star" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Star_icon-72a7cf.svg/64px-Star_icon-72a7cf.svg.png" class="animated-star" alt="star" />
+    </div>
   </footer>
 </body>
 </html>

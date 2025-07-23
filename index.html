@@ -1,156 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Prompt Landing Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TR-103 | Prompt Engineering Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    body {
-      background-color: #fff0f3;
-    }
+        body {
+            background: linear-gradient(to bottom right, #ffe4e1, #e6e6fa);
+            color: #333;
+        }
 
-    /* Navbar */
-    nav {
-      background-color: #ffe5ec;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #ffc2d1;
-    }
+        header {
+            background-color: rgba(255, 182, 193, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    nav h1 {
-      font-size: 1.8rem;
-      color: #c9184a;
-    }
+        header h1 {
+            color: #5c3d6b;
+            font-size: 2.5rem;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
+        nav {
+            margin-top: 10px;
+        }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #720026;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+        nav a {
+            margin: 0 15px;
+            color: #5c3d6b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
 
-    nav ul li a:hover {
-      color: #c9184a;
-    }
+        nav a:hover {
+            color: #ff69b4;
+        }
 
-    /* Hero Section */
-    .hero-improved {
-      background: linear-gradient(135deg, #fcd5ce, #fae1dd);
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      margin: 3rem 2rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70') no-repeat center center/cover;
+            padding: 80px 20px;
+            color: #fff;
+            text-align: center;
+        }
 
-    .hero-improved::before {
-      content: "";
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      background: url("8693aee1-4db4-4c8c-8ea4-8ddd5ebb6fbc.png") no-repeat center center/contain;
-      opacity: 0.1;
-      animation: float 8s ease-in-out infinite alternate;
-    }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
 
-    @keyframes float {
-      0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(-20px) rotate(5deg); }
-    }
+        .hero p {
+            font-size: 1.3rem;
+        }
 
-    .overlay-text h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #fff;
-      text-align: center;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.15);
-      z-index: 2;
-      position: relative;
-    }
+        .intro {
+            padding: 50px 20px;
+            background-color: #fff0f5;
+            text-align: center;
+        }
 
-    .overlay-text span {
-      color: #b5838d;
-      font-style: italic;
-      display: inline-block;
-      animation: fadeIn 2s ease-in-out forwards;
-    }
+        .intro img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 40px 20px;
+            background-color: #fdf5e6;
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: #ffe5ec;
-      color: #720026;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
+        .gallery img {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
 
-    /* Responsive */
-    @media screen and (max-width: 768px) {
-      .overlay-text h1 {
-        font-size: 2rem;
-      }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
 
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-    }
-  </style>
+        .cta {
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .cta h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #6a5acd;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 30px;
+            background: #add8e6;
+            border-radius: 30px;
+            color: #333;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .cta a:hover {
+            background: #b0e0e6;
+        }
+
+        footer {
+            background-color: #e0c9d6;
+            padding: 30px 20px;
+            text-align: center;
+            color: #333;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        footer::after {
+            content: '✨';
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            animation: sparkle 1s infinite;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.5; transform: scale(1); }
+        }
+    </style>
 </head>
+
 <body>
+    <header>
+        <h1>Prompt Engineering Training - TR-103</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="daily-task.html">Daily Tasks</a>
+            <a href="daily-diary.html">Daily Diary</a>
+        </nav>
+    </header>
 
-  <!-- Navbar -->
-  <nav>
-    <h1>PromptLand</h1>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Tasks</a></li>
-      <li><a href="#">Diary</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+    <section class="hero">
+        <h2>Welcome to TR-103</h2>
+        <p>Hosted by Guru Nanak Dev Engineering College<br>Explore creativity, AI, and prompts like never before.</p>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="hero-improved">
-    <div class="overlay-text">
-      <h1>
-        Elevate Your Prompts.<br>
-        <span>Elevate Your Mind.</span>
-      </h1>
-    </div>
-  </section>
+    <section class="intro">
+        <h2>About the Training</h2>
+        <p>This 20-day Prompt Engineering Training by GNDEC equips students with the skills and knowledge to master prompt crafting for AI models, improve creativity, and foster smart interaction with language models.</p>
+        <img src="/mnt/data/8693aee1-4db4-4c8c-8ea4-8ddd5ebb6fbc.png" alt="Training Photo">
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 PromptLand. All rights reserved.
-  </footer>
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1603570418609-0605ef46b366" alt="Training">
+        <img src="https://images.unsplash.com/photo-1612832021017-bfbbd32465fd" alt="Workshop">
+        <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507" alt="Collaboration">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Students">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Prompting">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8f6b5cfb" alt="Campus">
+    </section>
 
+    <section class="cta">
+        <h3>Jump into your daily journey!</h3>
+        <a href="daily-task.html">View Daily Tasks</a>
+        <a href="daily-diary.html">Submit Daily Diaries</a>
+    </section>
+
+    <footer>
+        &copy; 2025 Guru Nanak Dev Engineering College | TR-103 Prompt Engineering Training
+    </footer>
 </body>
+
 </html>

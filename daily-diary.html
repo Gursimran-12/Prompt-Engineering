@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Diary - TR-103 Prompt Engineering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+    header {
+      background-color: #b6c1a3;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      margin: 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background-color: #f0f4ea;
+      padding: 40px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .upload-section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .upload-section h3 {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .diary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .diary-entry {
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .diary-entry a {
+      color: #4e6c3d;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .gallery {
+      padding: 40px 20px;
+      background-color: #e6ecdd;
+      text-align: center;
+    }
+    .gallery h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .gallery-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .gallery-images img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TR-103 Prompt Training</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="daily-task.html">Daily Task</a>
+      <a href="daily-diary.html">Daily Diary</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Upload Your Daily Diaries</h2>
+    <p>Keep track of your learning progress by uploading daily reflections.</p>
+  </div>
+
+  <section class="upload-section">
+    <h3>Daily Upload Links</h3>
+    <div class="diary-grid">
+      <!-- Generate 20 links -->
+      <script>
+        for (let i = 1; i <= 20; i++) {
+          document.write(`<div class='diary-entry'><a href='#'> Day ${i} </a></div>`);
+        }
+      </script>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h3>Memories Captured</h3>
+    <div class="gallery-images">
+      <img src="images/mem1.jpg" alt="" />
+      <img src="images/mem2.webp" alt="" />
+      <img src="images/mem3.jpg" alt="" />
+      <img src="images/mem4.avif" alt="" />
+
+    </div>
+  </section>
+</body>
+</html>

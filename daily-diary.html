@@ -110,10 +110,14 @@
   <section class="upload-section">
     <h3>Daily Upload Links</h3>
     <div class="diary-grid">
-      <!-- Generate 20 links -->
+      <!-- Static links to PDFs for Day 1 to Day 20 -->
       <script>
         for (let i = 1; i <= 20; i++) {
-          document.write(`<div class='diary-entry'><a href='#'> Day ${i} </a></div>`);
+          document.write(`
+            <div class='diary-entry'>
+              <a href='pdfs/Day${i}.pdf' target='_blank'>Day ${i} - View PDF</a>
+            </div>
+          `);
         }
       </script>
     </div>
@@ -126,7 +130,6 @@
       <img src="images/mem2.webp" alt="" />
       <img src="images/mem3.jpg" alt="" />
       <img src="images/mem4.avif" alt="" />
-
     </div>
   </section>
 </body>
